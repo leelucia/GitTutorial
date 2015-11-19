@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>{{ title }}</title>
+
+   <link rel="stylesheet" href="static/style.css">
+ </head>
+ <body>
+
+   <!-- {% if name %}
+       The name of this file is {{name}}
+   {% endif %} -->
+
+    <header>
+
+      <nav>
+        <h1>Colleen van Lent</h1>
+        <ul>
+
+         <li><a href="index"
+          {% if name == "index" %}
+              class = "current"
+              title =="home"
+              {% endif %}
+          >Home</a></li>
+
+
+         <li><a href="courses"
+          {% if name == "courses" %}
+              class = "current"
+              title == "courses"
+              {% endif %}
+          >Courses</a></li>
+         <li><a href="interests"
+          {% if name == "interests" %}
+              class = "current"
+              title == "interests"
+              {% endif %}
+          >Interests</a></li>
+         <li><a href="other"
+        {% if name == "other" %}
+              class = "current"
+              title == "other"
+              {% endif %}
+          >Other</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    {% block content %}
+      You should never see this!!
+    {% endblock %}
+
+    {% extends "footer.html" %}
+  </body>
+</html>
